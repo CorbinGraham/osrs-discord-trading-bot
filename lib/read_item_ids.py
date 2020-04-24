@@ -1,4 +1,4 @@
-path = '../tradable_items.txt'
+path = '../bin/tradable_items.txt'
 
 # Reads in text file containing ids and tradeable items
 def read_item_ids():
