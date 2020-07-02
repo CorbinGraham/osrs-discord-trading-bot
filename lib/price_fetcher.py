@@ -24,7 +24,7 @@ class price_fetcher:
 				# Try to fetch raw HTML from osrs ge item pages.
 				try:
 					# If we can't read the text, the response is empty.
-					page = requests.get(url)
+					page = requests.get(url, timeout=10)
 
 					# if we hit a 404 error don't keep attempting the item as it likely does not exist.
 					if page.status_code == 404:
@@ -34,7 +34,6 @@ class price_fetcher:
 				except:
 					# Sleep longer because we failed
 					print('failed on ' + ids_and_items[item_id])
-					time.sleep(5)
 					continue
 				
 
